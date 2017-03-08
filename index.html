@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cn-en">
+<head>
+    <meta charset="UTF-8">
+    <title>3DTest</title>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="snowzone">
+<div id="wrapper">
+    <header>
+        <h1>使用纯CSS3制作的3d动画</h1>
+        <h2>电影海报展板</h2>
+    </header>
+    <audio src="./music/yourName.mp3" autoplay="autoplay" loop="loop"></audio>
+    <div id="content">
+        <article>
+           <p>
+               这是一个非常棒的纯CSS3的3D动画效果例子。利用perspective,transform以及transition属性，我们可以创造一个3d动画效果。仅仅通过鼠标掠过电影海报就能看到一个非常棒的动画效果。
+           </p>
+            <p>
+                确定你的浏览器内核为 -webkit核，这样才能看到3d效果。
+            </p>
+        </article>
+        <ul>
+            <li>
+                <img src="images/yourName.jpg"/>
+                <div class="movieInfo">
+                    <p>你的名字</p>
+                    <p>《你的名字》是由新海诚执导的一部日本动画电影，由神木隆之介、上白石萌音担任主要配音演员...</p>
+                    <a href="http://baike.baidu.com/link?url=GMfwok-IR1HN9c7Ur2Ug52H4e2XIHcIzgrA8fqFABwyyULo1yjEIFm0NT_-83GZupdsjG4xxRxsnp7JZIqGhZ8u7w7CeVItEdfrIfvmV5Q6K9H9FjcqXEcnp-w6LeSe3lyFURNcllC-7sSLHDNvp-XVIQJ3zXv8O_YsVnGlJsAy-Oh4vFt2rPsjBmWeZSPXTLaMAZLc3qrqpmYlPGMQRhHnrMRcSyy82lqG-9XqktWK" target="_blank">更多信息</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/qian.jpg"/>
+                <div class="movieInfo">
+                    <p>千与千寻</p>
+                    <p>《千与千寻》是宫崎骏执导、编剧，吉卜力工作室制作的动画电影，影片于2001年7月20日在日本....</p>
+                    <a href="http://baike.baidu.com/link?url=SVqthVZDOfygfHg0uzMoV24A__I5iu4Jm0ga7xzwuQvbgwt8e4dzkhckDjI_lp3iW7obSI1kzcB3kGCoG-Pax9RQzoNaTUdbeMJUx2AfrfsRHzX4dKpqxYLul_tP-48A" target="_blank">更多信息</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/yidong.jpg"/>
+                <div class="movieInfo">
+                    <p>哈尔的移动城堡</p>
+                    <p>《哈尔的移动城堡》，是宫崎骏继动画电影《千与千寻》之后，在2004年冬推出的作品....</p>
+                    <a href="http://baike.baidu.com/item/%E5%93%88%E5%B0%94%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%9F%8E%E5%A0%A1/520539?sefr=cr" target="_blank">更多信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>Made By Tanxy</p>
+    </footer>
+ </div>
+    </div>
+ </body>
+
+<script>
+(function(){
+function snow(left,height,src){
+var div = document.createElement("div");
+var img = document.createElement("img");
+div.appendChild(img);
+img.className = "roll";
+img.src = src;
+div.style.left=left+"px";
+div.style.height=height+"px";
+div.className="div";
+document.getElementById("snowzone").appendChild(div);
+setTimeout(function(){
+document.getElementById("snowzone").removeChild(div);
+},5000);
+}
+setInterval(function(){
+var left = Math.random()*window.innerWidth;
+var height = Math.random()*window.innerHeight;
+var src = "./images/snow"+Math.floor(Math.random()*2+1)+".png";
+snow(left,height,src);
+},400);
+})();
+</script>
+</html>
